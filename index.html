@@ -1,89 +1,98 @@
-<div class="accordion-wrapper">
-  <!-- Academy -->
-  <div class="accordion-item">
-    <button class="accordion-toggle">Academy</button>
-    <div class="accordion-content">
-      <a href="https://youthalive.com.au/portal-dashboard-academy-sxs">SxS Comparison</a>
-      <a href="https://youthalive.com.au/portal-dashboard-academy-yxy">YxY Comparison</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .accordion-wrapper {
+      display: flex;
+      gap: 20px;
+      justify-content: start;
+    }
+
+    .accordion-item {
+      flex: 1;
+    }
+
+    .accordion-toggle,
+    .accordion-content a {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .accordion-toggle {
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #f2f2f2;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 10px 15px;
+      background: #fafafa;
+      border: 1px solid #ddd;
+    }
+
+    .accordion-content a {
+      display: block;
+      margin: 6px 0;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .accordion-content a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="accordion-wrapper">
+    <!-- Academy -->
+    <div class="accordion-item">
+      <button class="accordion-toggle">Academy</button>
+      <div class="accordion-content">
+        <a href="https://youthalive.com.au/portal-dashboard-academy-sxs">SxS Comparison</a>
+        <a href="https://youthalive.com.au/portal-dashboard-academy-yxy">YxY Comparison</a>
+      </div>
+    </div>
+
+    <!-- Youth Alive -->
+    <div class="accordion-item">
+      <button class="accordion-toggle">Youth Alive</button>
+      <div class="accordion-content">
+        <a href="https://youthalive.com.au/portal-dashboard-youth-alive-sxs">SxS Comparison</a>
+        <a href="https://youthalive.com.au/portal-dashboard-youth-alive-yxy">YxY Comparison</a>
+        <a href="https://youthalive.com.au/portal-dashboard-youth-alive-gospel-response">Gospel Response</a>
+      </div>
+    </div>
+
+    <!-- UNIVS -->
+    <div class="accordion-item">
+      <button class="accordion-toggle">UNIVS</button>
+      <div class="accordion-content">
+        <a href="https://youthalive.com.au/portal-dashboard-univs-sxs">SxS Comparison</a>
+        <a href="https://youthalive.com.au/portal-dashboard-univs-yxy">YxY Comparison</a>
+      </div>
     </div>
   </div>
 
-  <!-- Youth Alive -->
-  <div class="accordion-item">
-    <button class="accordion-toggle">Youth Alive</button>
-    <div class="accordion-content">
-      <a href="https://youthalive.com.au/portal-dashboard-youth-alive-sxs">SxS Comparison</a>
-      <a href="https://youthalive.com.au/portal-dashboard-youth-alive-yxy">YxY Comparison</a>
-      <a href="https://youthalive.com.au/portal-dashboard-youth-alive-gospel-response">Gospel Response</a>
-    </div>
-  </div>
-
-  <!-- UNIVS -->
-  <div class="accordion-item">
-    <button class="accordion-toggle">UNIVS</button>
-    <div class="accordion-content">
-      <a href="https://youthalive.com.au/portal-dashboard-univs-sxs">SxS Comparison</a>
-      <a href="https://youthalive.com.au/portal-dashboard-univs-yxy">YxY Comparison</a>
-    </div>
-  </div>
-</div>
-
-<style>
-  .accordion-wrapper {
-    display: flex;
-    gap: 20px;
-    justify-content: start;
-  }
-
-  .accordion-item {
-    flex: 1;
-  }
-
-  .accordion-toggle {
-    width: 100%;
-    text-align: left;
-    padding: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    background: #f2f2f2;
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-
-  .accordion-content {
-    display: none;
-    padding: 10px 15px;
-    background: #fafafa;
-    border: 1px solid #ddd;
-  }
-
-  .accordion-content a {
-    display: block;
-    margin: 6px 0;
-    color: #0077cc;
-    text-decoration: none;
-  }
-
-  .accordion-content a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-<script>
-  const toggles = document.querySelectorAll('.accordion-toggle');
-  toggles.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // Close all other panels
-      document.querySelectorAll('.accordion-content').forEach(content => {
-        if (content !== btn.nextElementSibling) {
-          content.style.display = 'none';
-        }
+  <script>
+    const toggles = document.querySelectorAll('.accordion-toggle');
+    toggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.accordion-content').forEach(content => {
+          if (content !== btn.nextElementSibling) {
+            content.style.display = 'none';
+          }
+        });
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
       });
-
-      // Toggle the clicked one
-      const content = btn.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
     });
-  });
-</script>
+  </script>
+</body>
+</html>
